@@ -1,0 +1,359 @@
+[
+ {
+  "week": "2025-07-28",
+  "sales_channel": "Seal Subscriptions",
+  "total_sales": 85.0,
+  "orders": 5,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-07-28",
+  "sales_channel": "Draft Orders",
+  "total_sales": 771.42,
+  "orders": 5,
+  "new_customers": 1
+ },
+ {
+  "week": "2025-07-28",
+  "sales_channel": "Point of Sale",
+  "total_sales": 27826.33,
+  "orders": 528,
+  "new_customers": 25
+ },
+ {
+  "week": "2025-07-28",
+  "sales_channel": "Online Store",
+  "total_sales": 6169.46,
+  "orders": 45,
+  "new_customers": 24
+ },
+ {
+  "week": "2025-08-04",
+  "sales_channel": "Draft Orders",
+  "total_sales": 1970.82,
+  "orders": 6,
+  "new_customers": 1
+ },
+ {
+  "week": "2025-08-04",
+  "sales_channel": "Online Store",
+  "total_sales": 5633.73,
+  "orders": 34,
+  "new_customers": 18
+ },
+ {
+  "week": "2025-08-04",
+  "sales_channel": "Point of Sale",
+  "total_sales": 25181.2,
+  "orders": 485,
+  "new_customers": 21
+ },
+ {
+  "week": "2025-08-11",
+  "sales_channel": "Seal Subscriptions",
+  "total_sales": 0.0,
+  "orders": 1,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-08-11",
+  "sales_channel": "Point of Sale",
+  "total_sales": 24043.98,
+  "orders": 487,
+  "new_customers": 20
+ },
+ {
+  "week": "2025-08-11",
+  "sales_channel": "Online Store",
+  "total_sales": 6596.01,
+  "orders": 40,
+  "new_customers": 28
+ },
+ {
+  "week": "2025-08-11",
+  "sales_channel": "Draft Orders",
+  "total_sales": 906.7,
+  "orders": 2,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-08-18",
+  "sales_channel": "Online Store",
+  "total_sales": 6682.15,
+  "orders": 42,
+  "new_customers": 22
+ },
+ {
+  "week": "2025-08-18",
+  "sales_channel": "Recharge Subscriptions",
+  "total_sales": 0.0,
+  "orders": 0,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-08-18",
+  "sales_channel": "Shop",
+  "total_sales": 147.5,
+  "orders": 1,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-08-18",
+  "sales_channel": "Draft Orders",
+  "total_sales": 2428.56,
+  "orders": 5,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-08-18",
+  "sales_channel": "Point of Sale",
+  "total_sales": 23472.81,
+  "orders": 460,
+  "new_customers": 23
+ },
+ {
+  "week": "2025-08-25",
+  "sales_channel": "Shop",
+  "total_sales": 79.86,
+  "orders": 1,
+  "new_customers": 1
+ },
+ {
+  "week": "2025-08-25",
+  "sales_channel": "Online Store",
+  "total_sales": 6593.03,
+  "orders": 42,
+  "new_customers": 30
+ },
+ {
+  "week": "2025-08-25",
+  "sales_channel": "Seal Subscriptions",
+  "total_sales": 276.8,
+  "orders": 6,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-08-25",
+  "sales_channel": "Point of Sale",
+  "total_sales": 26372.73,
+  "orders": 499,
+  "new_customers": 22
+ },
+ {
+  "week": "2025-09-01",
+  "sales_channel": "Draft Orders",
+  "total_sales": 2468.97,
+  "orders": 9,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-09-01",
+  "sales_channel": "Online Store",
+  "total_sales": 5710.38,
+  "orders": 47,
+  "new_customers": 29
+ },
+ {
+  "week": "2025-09-01",
+  "sales_channel": "Point of Sale",
+  "total_sales": 27737.4,
+  "orders": 540,
+  "new_customers": 31
+ },
+ {
+  "week": "2025-09-08",
+  "sales_channel": "Draft Orders",
+  "total_sales": 2082.05,
+  "orders": 6,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-09-08",
+  "sales_channel": "Seal Subscriptions",
+  "total_sales": 93.05,
+  "orders": 2,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-09-08",
+  "sales_channel": "Online Store",
+  "total_sales": 4917.06,
+  "orders": 35,
+  "new_customers": 23
+ },
+ {
+  "week": "2025-09-08",
+  "sales_channel": "Point of Sale",
+  "total_sales": 24179.35,
+  "orders": 484,
+  "new_customers": 14
+ },
+ {
+  "week": "2025-09-15",
+  "sales_channel": "Point of Sale",
+  "total_sales": 23192.2,
+  "orders": 435,
+  "new_customers": 12
+ },
+ {
+  "week": "2025-09-15",
+  "sales_channel": "Draft Orders",
+  "total_sales": 645.62,
+  "orders": 3,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-09-15",
+  "sales_channel": "Seal Subscriptions",
+  "total_sales": -19.85,
+  "orders": 0,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-09-15",
+  "sales_channel": "Shop",
+  "total_sales": 156.0,
+  "orders": 1,
+  "new_customers": 1
+ },
+ {
+  "week": "2025-09-15",
+  "sales_channel": "Online Store",
+  "total_sales": 6054.17,
+  "orders": 35,
+  "new_customers": 15
+ },
+ {
+  "week": "2025-09-22",
+  "sales_channel": "Online Store",
+  "total_sales": 5265.86,
+  "orders": 39,
+  "new_customers": 18
+ },
+ {
+  "week": "2025-09-22",
+  "sales_channel": "Seal Subscriptions",
+  "total_sales": 0.0,
+  "orders": 0,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-09-22",
+  "sales_channel": "Draft Orders",
+  "total_sales": 2079.08,
+  "orders": 6,
+  "new_customers": 1
+ },
+ {
+  "week": "2025-09-22",
+  "sales_channel": "Point of Sale",
+  "total_sales": 21878.04,
+  "orders": 456,
+  "new_customers": 20
+ },
+ {
+  "week": "2025-09-29",
+  "sales_channel": "Seal Subscriptions",
+  "total_sales": 425.0,
+  "orders": 9,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-09-29",
+  "sales_channel": "Draft Orders",
+  "total_sales": 35.28,
+  "orders": 2,
+  "new_customers": 1
+ },
+ {
+  "week": "2025-09-29",
+  "sales_channel": "Point of Sale",
+  "total_sales": 23580.05,
+  "orders": 423,
+  "new_customers": 19
+ },
+ {
+  "week": "2025-09-29",
+  "sales_channel": "Online Store",
+  "total_sales": 5059.64,
+  "orders": 44,
+  "new_customers": 25
+ },
+ {
+  "week": "2025-10-06",
+  "sales_channel": "Online Store",
+  "total_sales": 5823.56,
+  "orders": 40,
+  "new_customers": 19
+ },
+ {
+  "week": "2025-10-06",
+  "sales_channel": "Draft Orders",
+  "total_sales": 2389.16,
+  "orders": 4,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-10-06",
+  "sales_channel": "Point of Sale",
+  "total_sales": 32058.69,
+  "orders": 528,
+  "new_customers": 28
+ },
+ {
+  "week": "2025-10-13",
+  "sales_channel": "Online Store",
+  "total_sales": 5735.68,
+  "orders": 39,
+  "new_customers": 27
+ },
+ {
+  "week": "2025-10-13",
+  "sales_channel": "Seal Subscriptions",
+  "total_sales": 195.0,
+  "orders": 6,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-10-13",
+  "sales_channel": "Draft Orders",
+  "total_sales": 753.19,
+  "orders": 2,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-10-13",
+  "sales_channel": "Point of Sale",
+  "total_sales": 22990.06,
+  "orders": 450,
+  "new_customers": 17
+ },
+ {
+  "week": "2025-10-20",
+  "sales_channel": "Online Store",
+  "total_sales": 6142.62,
+  "orders": 43,
+  "new_customers": 28
+ },
+ {
+  "week": "2025-10-20",
+  "sales_channel": "Shop",
+  "total_sales": 61.0,
+  "orders": 1,
+  "new_customers": 1
+ },
+ {
+  "week": "2025-10-20",
+  "sales_channel": "Draft Orders",
+  "total_sales": 1356.04,
+  "orders": 4,
+  "new_customers": 0
+ },
+ {
+  "week": "2025-10-20",
+  "sales_channel": "Point of Sale",
+  "total_sales": 25129.12,
+  "orders": 462,
+  "new_customers": 27
+ }
+]

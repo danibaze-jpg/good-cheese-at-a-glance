@@ -1,0 +1,72 @@
+[
+ {
+  "stage": "Quote sent",
+  "boxes": 23,
+  "budget_per_box": 200.0,
+  "booked_value": null,
+  "season": "2026"
+ },
+ {
+  "stage": "Quote sent",
+  "boxes": 200,
+  "budget_per_box": 62.5,
+  "booked_value": null,
+  "season": "2026"
+ },
+ {
+  "stage": "Lost",
+  "boxes": 25,
+  "budget_per_box": 97.0,
+  "booked_value": null,
+  "season": "2026"
+ },
+ {
+  "stage": "Quote sent",
+  "boxes": 15,
+  "budget_per_box": 91.6667,
+  "booked_value": null,
+  "season": "2026"
+ },
+ {
+  "stage": "Quote sent",
+  "boxes": 25,
+  "budget_per_box": 75.0,
+  "booked_value": null,
+  "season": "2026"
+ },
+ {
+  "stage": "Confirmed count",
+  "boxes": 6,
+  "budget_per_box": null,
+  "booked_value": null,
+  "season": "2026"
+ },
+ {
+  "stage": "On hold",
+  "boxes": null,
+  "budget_per_box": null,
+  "booked_value": null,
+  "season": "2026"
+ },
+ {
+  "stage": "Quote sent",
+  "boxes": 550,
+  "budget_per_box": null,
+  "booked_value": null,
+  "season": "2027"
+ },
+ {
+  "stage": "Won",
+  "boxes": null,
+  "budget_per_box": null,
+  "booked_value": 901.01,
+  "season": "2026"
+ },
+ {
+  "stage": "Won",
+  "boxes": null,
+  "budget_per_box": null,
+  "booked_value": 1525.5,
+  "season": "2026"
+ }
+]

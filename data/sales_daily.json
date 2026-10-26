@@ -1,0 +1,587 @@
+[
+ {
+  "day": "2026-10-01",
+  "total_sales": 5603.17,
+  "orders": 83
+ },
+ {
+  "day": "2026-10-02",
+  "total_sales": 8566.07,
+  "orders": 110
+ },
+ {
+  "day": "2026-10-03",
+  "total_sales": 9097.94,
+  "orders": 123
+ },
+ {
+  "day": "2026-10-04",
+  "total_sales": 6736.98,
+  "orders": 97
+ },
+ {
+  "day": "2026-10-05",
+  "total_sales": 4228.08,
+  "orders": 59
+ },
+ {
+  "day": "2026-10-06",
+  "total_sales": 6434.39,
+  "orders": 72
+ },
+ {
+  "day": "2026-10-07",
+  "total_sales": 4735.45,
+  "orders": 59
+ },
+ {
+  "day": "2026-10-08",
+  "total_sales": 7687.48,
+  "orders": 95
+ },
+ {
+  "day": "2026-10-09",
+  "total_sales": 11371.55,
+  "orders": 125
+ },
+ {
+  "day": "2026-10-10",
+  "total_sales": 12716.61,
+  "orders": 174
+ },
+ {
+  "day": "2026-10-11",
+  "total_sales": 8924.81,
+  "orders": 129
+ },
+ {
+  "day": "2026-10-12",
+  "total_sales": 4468.34,
+  "orders": 71
+ },
+ {
+  "day": "2026-10-13",
+  "total_sales": 3351.17,
+  "orders": 66
+ },
+ {
+  "day": "2026-10-14",
+  "total_sales": 7125.96,
+  "orders": 59
+ },
+ {
+  "day": "2026-10-15",
+  "total_sales": 3536.75,
+  "orders": 47
+ },
+ {
+  "day": "2026-10-16",
+  "total_sales": 5708.74,
+  "orders": 95
+ },
+ {
+  "day": "2026-10-17",
+  "total_sales": 7552.83,
+  "orders": 123
+ },
+ {
+  "day": "2026-10-18",
+  "total_sales": 6004.45,
+  "orders": 97
+ },
+ {
+  "day": "2026-10-19",
+  "total_sales": 4016.7,
+  "orders": 64
+ },
+ {
+  "day": "2026-10-20",
+  "total_sales": 5204.69,
+  "orders": 68
+ },
+ {
+  "day": "2026-10-21",
+  "total_sales": 3789.44,
+  "orders": 59
+ },
+ {
+  "day": "2026-10-22",
+  "total_sales": 4707.35,
+  "orders": 85
+ },
+ {
+  "day": "2026-10-23",
+  "total_sales": 7933.03,
+  "orders": 113
+ },
+ {
+  "day": "2026-10-24",
+  "total_sales": 11076.14,
+  "orders": 141
+ },
+ {
+  "day": "2026-10-25",
+  "total_sales": 4417.19,
+  "orders": 100
+ },
+ {
+  "day": "2025-10-01",
+  "total_sales": 3643.57,
+  "orders": 61
+ },
+ {
+  "day": "2025-10-02",
+  "total_sales": 2899.17,
+  "orders": 58
+ },
+ {
+  "day": "2025-10-03",
+  "total_sales": 6078.83,
+  "orders": 96
+ },
+ {
+  "day": "2025-10-04",
+  "total_sales": 7891.62,
+  "orders": 99
+ },
+ {
+  "day": "2025-10-05",
+  "total_sales": 4471.13,
+  "orders": 83
+ },
+ {
+  "day": "2025-10-06",
+  "total_sales": 3186.91,
+  "orders": 51
+ },
+ {
+  "day": "2025-10-07",
+  "total_sales": 3820.8,
+  "orders": 57
+ },
+ {
+  "day": "2025-10-08",
+  "total_sales": 5067.23,
+  "orders": 56
+ },
+ {
+  "day": "2025-10-09",
+  "total_sales": 5016.79,
+  "orders": 76
+ },
+ {
+  "day": "2025-10-10",
+  "total_sales": 7878.6,
+  "orders": 112
+ },
+ {
+  "day": "2025-10-11",
+  "total_sales": 9822.56,
+  "orders": 134
+ },
+ {
+  "day": "2025-10-12",
+  "total_sales": 5478.52,
+  "orders": 85
+ },
+ {
+  "day": "2025-10-13",
+  "total_sales": 4459.02,
+  "orders": 54
+ },
+ {
+  "day": "2025-10-14",
+  "total_sales": 2617.76,
+  "orders": 55
+ },
+ {
+  "day": "2025-10-15",
+  "total_sales": 2500.38,
+  "orders": 54
+ },
+ {
+  "day": "2025-10-16",
+  "total_sales": 3858.68,
+  "orders": 62
+ },
+ {
+  "day": "2025-10-17",
+  "total_sales": 4046.01,
+  "orders": 77
+ },
+ {
+  "day": "2025-10-18",
+  "total_sales": 7707.71,
+  "orders": 105
+ },
+ {
+  "day": "2025-10-19",
+  "total_sales": 4484.37,
+  "orders": 90
+ },
+ {
+  "day": "2025-10-20",
+  "total_sales": 3499.27,
+  "orders": 58
+ },
+ {
+  "day": "2025-10-21",
+  "total_sales": 3360.88,
+  "orders": 53
+ },
+ {
+  "day": "2025-10-22",
+  "total_sales": 2658.67,
+  "orders": 47
+ },
+ {
+  "day": "2025-10-23",
+  "total_sales": 4311.38,
+  "orders": 56
+ },
+ {
+  "day": "2025-10-24",
+  "total_sales": 7594.9,
+  "orders": 94
+ },
+ {
+  "day": "2025-10-25",
+  "total_sales": 7158.62,
+  "orders": 119
+ },
+ {
+  "day": "2025-10-26",
+  "total_sales": 4105.06,
+  "orders": 83
+ },
+ {
+  "day": "2025-10-27",
+  "total_sales": 2326.81,
+  "orders": 56
+ },
+ {
+  "day": "2025-10-28",
+  "total_sales": 2789.38,
+  "orders": 43
+ },
+ {
+  "day": "2025-10-29",
+  "total_sales": 3262.78,
+  "orders": 63
+ },
+ {
+  "day": "2025-10-30",
+  "total_sales": 2505.05,
+  "orders": 48
+ },
+ {
+  "day": "2025-10-31",
+  "total_sales": 6541.58,
+  "orders": 90
+ },
+ {
+  "day": "2025-11-01",
+  "total_sales": 8627.17,
+  "orders": 130
+ },
+ {
+  "day": "2025-11-02",
+  "total_sales": 5882.24,
+  "orders": 89
+ },
+ {
+  "day": "2025-11-03",
+  "total_sales": 2145.24,
+  "orders": 43
+ },
+ {
+  "day": "2025-11-04",
+  "total_sales": 2798.87,
+  "orders": 53
+ },
+ {
+  "day": "2025-11-05",
+  "total_sales": 3874.77,
+  "orders": 60
+ },
+ {
+  "day": "2025-11-06",
+  "total_sales": 3214.31,
+  "orders": 61
+ },
+ {
+  "day": "2025-11-07",
+  "total_sales": 6088.56,
+  "orders": 84
+ },
+ {
+  "day": "2025-11-08",
+  "total_sales": 7890.3,
+  "orders": 121
+ },
+ {
+  "day": "2025-11-09",
+  "total_sales": 3746.39,
+  "orders": 72
+ },
+ {
+  "day": "2025-11-10",
+  "total_sales": 3847.23,
+  "orders": 64
+ },
+ {
+  "day": "2025-11-11",
+  "total_sales": 3514.82,
+  "orders": 59
+ },
+ {
+  "day": "2025-11-12",
+  "total_sales": 2855.98,
+  "orders": 48
+ },
+ {
+  "day": "2025-11-13",
+  "total_sales": 3493.7,
+  "orders": 63
+ },
+ {
+  "day": "2025-11-14",
+  "total_sales": 6348.18,
+  "orders": 96
+ },
+ {
+  "day": "2025-11-15",
+  "total_sales": 8304.2,
+  "orders": 116
+ },
+ {
+  "day": "2025-11-16",
+  "total_sales": 7408.2,
+  "orders": 95
+ },
+ {
+  "day": "2025-11-17",
+  "total_sales": 2862.67,
+  "orders": 53
+ },
+ {
+  "day": "2025-11-18",
+  "total_sales": 3914.03,
+  "orders": 59
+ },
+ {
+  "day": "2025-11-19",
+  "total_sales": 3773.56,
+  "orders": 57
+ },
+ {
+  "day": "2025-11-20",
+  "total_sales": 3893.8,
+  "orders": 65
+ },
+ {
+  "day": "2025-11-21",
+  "total_sales": 4866.27,
+  "orders": 85
+ },
+ {
+  "day": "2025-11-22",
+  "total_sales": 8783.54,
+  "orders": 135
+ },
+ {
+  "day": "2025-11-23",
+  "total_sales": 4640.9,
+  "orders": 78
+ },
+ {
+  "day": "2025-11-24",
+  "total_sales": 1976.97,
+  "orders": 55
+ },
+ {
+  "day": "2025-11-25",
+  "total_sales": 4902.43,
+  "orders": 66
+ },
+ {
+  "day": "2025-11-26",
+  "total_sales": 5249.38,
+  "orders": 67
+ },
+ {
+  "day": "2025-11-27",
+  "total_sales": 7552.24,
+  "orders": 89
+ },
+ {
+  "day": "2025-11-28",
+  "total_sales": 7186.81,
+  "orders": 91
+ },
+ {
+  "day": "2025-11-29",
+  "total_sales": 10727.6,
+  "orders": 142
+ },
+ {
+  "day": "2025-11-30",
+  "total_sales": 6357.32,
+  "orders": 98
+ },
+ {
+  "day": "2025-12-01",
+  "total_sales": 2889.37,
+  "orders": 47
+ },
+ {
+  "day": "2025-12-02",
+  "total_sales": 5116.82,
+  "orders": 77
+ },
+ {
+  "day": "2025-12-03",
+  "total_sales": 7302.66,
+  "orders": 83
+ },
+ {
+  "day": "2025-12-04",
+  "total_sales": 8816.64,
+  "orders": 77
+ },
+ {
+  "day": "2025-12-05",
+  "total_sales": 14978.28,
+  "orders": 114
+ },
+ {
+  "day": "2025-12-06",
+  "total_sales": 11555.74,
+  "orders": 150
+ },
+ {
+  "day": "2025-12-07",
+  "total_sales": 8960.94,
+  "orders": 110
+ },
+ {
+  "day": "2025-12-08",
+  "total_sales": 9629.18,
+  "orders": 71
+ },
+ {
+  "day": "2025-12-09",
+  "total_sales": 9580.71,
+  "orders": 99
+ },
+ {
+  "day": "2025-12-10",
+  "total_sales": 4528.91,
+  "orders": 67
+ },
+ {
+  "day": "2025-12-11",
+  "total_sales": 9254.61,
+  "orders": 100
+ },
+ {
+  "day": "2025-12-12",
+  "total_sales": 10725.17,
+  "orders": 120
+ },
+ {
+  "day": "2025-12-13",
+  "total_sales": 20495.35,
+  "orders": 192
+ },
+ {
+  "day": "2025-12-14",
+  "total_sales": 11239.66,
+  "orders": 144
+ },
+ {
+  "day": "2025-12-15",
+  "total_sales": 7931.53,
+  "orders": 97
+ },
+ {
+  "day": "2025-12-16",
+  "total_sales": 10020.51,
+  "orders": 111
+ },
+ {
+  "day": "2025-12-17",
+  "total_sales": 11955.27,
+  "orders": 117
+ },
+ {
+  "day": "2025-12-18",
+  "total_sales": 12523.12,
+  "orders": 143
+ },
+ {
+  "day": "2025-12-19",
+  "total_sales": 17049.09,
+  "orders": 187
+ },
+ {
+  "day": "2025-12-20",
+  "total_sales": 19418.29,
+  "orders": 212
+ },
+ {
+  "day": "2025-12-21",
+  "total_sales": 16458.11,
+  "orders": 194
+ },
+ {
+  "day": "2025-12-22",
+  "total_sales": 18973.24,
+  "orders": 200
+ },
+ {
+  "day": "2025-12-23",
+  "total_sales": 22777.78,
+  "orders": 257
+ },
+ {
+  "day": "2025-12-24",
+  "total_sales": 18882.49,
+  "orders": 220
+ },
+ {
+  "day": "2025-12-25",
+  "total_sales": 1438.32,
+  "orders": 11
+ },
+ {
+  "day": "2025-12-26",
+  "total_sales": 4894.42,
+  "orders": 68
+ },
+ {
+  "day": "2025-12-27",
+  "total_sales": 7445.93,
+  "orders": 92
+ },
+ {
+  "day": "2025-12-28",
+  "total_sales": 6562.35,
+  "orders": 86
+ },
+ {
+  "day": "2025-12-29",
+  "total_sales": 7915.89,
+  "orders": 95
+ },
+ {
+  "day": "2025-12-30",
+  "total_sales": 11080.06,
+  "orders": 117
+ },
+ {
+  "day": "2025-12-31",
+  "total_sales": 15084.26,
+  "orders": 173
+ }
+]

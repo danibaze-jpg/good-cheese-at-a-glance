@@ -1,0 +1,17 @@
+[
+ {
+  "measure": "cheese_club",
+  "label": "Cheese Club members",
+  "value": 45
+ },
+ {
+  "measure": "conservas_club",
+  "label": "Conservas Club members",
+  "value": 38
+ },
+ {
+  "measure": "email_subscribers",
+  "label": "Email subscribers",
+  "value": 8858
+ }
+]

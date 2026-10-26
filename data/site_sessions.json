@@ -1,0 +1,184 @@
+[
+ {
+  "period": "this_year",
+  "week": "2026-07-27",
+  "sessions": 8967,
+  "sessions_converted": 61,
+  "conversion_rate": 0.006802721088435374
+ },
+ {
+  "period": "this_year",
+  "week": "2026-08-03",
+  "sessions": 12479,
+  "sessions_converted": 62,
+  "conversion_rate": 0.004968346822662072
+ },
+ {
+  "period": "this_year",
+  "week": "2026-08-10",
+  "sessions": 17707,
+  "sessions_converted": 81,
+  "conversion_rate": 0.004574462077144632
+ },
+ {
+  "period": "this_year",
+  "week": "2026-08-17",
+  "sessions": 15303,
+  "sessions_converted": 78,
+  "conversion_rate": 0.005097039796118408
+ },
+ {
+  "period": "this_year",
+  "week": "2026-08-24",
+  "sessions": 13579,
+  "sessions_converted": 96,
+  "conversion_rate": 0.007069740039767288
+ },
+ {
+  "period": "this_year",
+  "week": "2026-08-31",
+  "sessions": 10319,
+  "sessions_converted": 63,
+  "conversion_rate": 0.006105242756081016
+ },
+ {
+  "period": "this_year",
+  "week": "2026-09-07",
+  "sessions": 8853,
+  "sessions_converted": 81,
+  "conversion_rate": 0.009149440867502542
+ },
+ {
+  "period": "this_year",
+  "week": "2026-09-14",
+  "sessions": 9411,
+  "sessions_converted": 72,
+  "conversion_rate": 0.007650621613006056
+ },
+ {
+  "period": "this_year",
+  "week": "2026-09-21",
+  "sessions": 4992,
+  "sessions_converted": 76,
+  "conversion_rate": 0.015224358974358974
+ },
+ {
+  "period": "this_year",
+  "week": "2026-09-28",
+  "sessions": 4998,
+  "sessions_converted": 93,
+  "conversion_rate": 0.018607442977190875
+ },
+ {
+  "period": "this_year",
+  "week": "2026-10-05",
+  "sessions": 6657,
+  "sessions_converted": 82,
+  "conversion_rate": 0.012317860898302538
+ },
+ {
+  "period": "this_year",
+  "week": "2026-10-12",
+  "sessions": 7711,
+  "sessions_converted": 52,
+  "conversion_rate": 0.006743613020360524
+ },
+ {
+  "period": "this_year",
+  "week": "2026-10-19",
+  "sessions": 8699,
+  "sessions_converted": 69,
+  "conversion_rate": 0.007931946200712726
+ },
+ {
+  "period": "last_year",
+  "week": "2025-07-28",
+  "sessions": 3199,
+  "sessions_converted": 42,
+  "conversion_rate": 0.01312910284463895
+ },
+ {
+  "period": "last_year",
+  "week": "2025-08-04",
+  "sessions": 3188,
+  "sessions_converted": 34,
+  "conversion_rate": 0.01066499372647428
+ },
+ {
+  "period": "last_year",
+  "week": "2025-08-11",
+  "sessions": 3491,
+  "sessions_converted": 40,
+  "conversion_rate": 0.011458034947006588
+ },
+ {
+  "period": "last_year",
+  "week": "2025-08-18",
+  "sessions": 3277,
+  "sessions_converted": 45,
+  "conversion_rate": 0.0137320720170888
+ },
+ {
+  "period": "last_year",
+  "week": "2025-08-25",
+  "sessions": 3648,
+  "sessions_converted": 37,
+  "conversion_rate": 0.010142543859649123
+ },
+ {
+  "period": "last_year",
+  "week": "2025-09-01",
+  "sessions": 3656,
+  "sessions_converted": 44,
+  "conversion_rate": 0.012035010940919038
+ },
+ {
+  "period": "last_year",
+  "week": "2025-09-08",
+  "sessions": 3315,
+  "sessions_converted": 37,
+  "conversion_rate": 0.011161387631975868
+ },
+ {
+  "period": "last_year",
+  "week": "2025-09-15",
+  "sessions": 3393,
+  "sessions_converted": 33,
+  "conversion_rate": 0.009725906277630416
+ },
+ {
+  "period": "last_year",
+  "week": "2025-09-22",
+  "sessions": 3305,
+  "sessions_converted": 37,
+  "conversion_rate": 0.011195158850226929
+ },
+ {
+  "period": "last_year",
+  "week": "2025-09-29",
+  "sessions": 3902,
+  "sessions_converted": 47,
+  "conversion_rate": 0.01204510507432086
+ },
+ {
+  "period": "last_year",
+  "week": "2025-10-06",
+  "sessions": 4740,
+  "sessions_converted": 40,
+  "conversion_rate": 0.008438818565400843
+ },
+ {
+  "period": "last_year",
+  "week": "2025-10-13",
+  "sessions": 3374,
+  "sessions_converted": 38,
+  "conversion_rate": 0.011262596324836989
+ },
+ {
+  "period": "last_year",
+  "week": "2025-10-20",
+  "sessions": 3649,
+  "sessions_converted": 42,
+  "conversion_rate": 0.011510002740476843
+ }
+]

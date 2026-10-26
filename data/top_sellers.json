@@ -1,0 +1,27 @@
+[
+ {
+  "product": "Extra-Large Cheese & Charcuterie Board",
+  "total_sales": 1695.0,
+  "units": 5
+ },
+ {
+  "product": "Delice de Bourgogne",
+  "total_sales": 457.2,
+  "units": 40
+ },
+ {
+  "product": "Sardines in Azores Butter",
+  "total_sales": 415.0,
+  "units": 26
+ },
+ {
+  "product": "Nuri Sardines in Olive Oil",
+  "total_sales": 405.6,
+  "units": 32
+ },
+ {
+  "product": "Blackbird Bread - Whole Loaf",
+  "total_sales": 378.0,
+  "units": 42
+ }
+]

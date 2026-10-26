@@ -1,0 +1,12 @@
+[
+ {
+  "batch": "First boxes, by air",
+  "boxes": 400,
+  "lands": "2026-11-20"
+ },
+ {
+  "batch": "Rest of the order, by sea",
+  "boxes": 1600,
+  "lands": "2026-12-10"
+ }
+]
