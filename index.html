@@ -255,20 +255,25 @@ body { padding: 16px; box-sizing: border-box; }
     <div class="gc-projects dash-skeleton" id="project-list" data-source="projects"></div>
   </section>
 
-  <p class="gc-foot">Numbers updated <span id="gc-updated">-</span>, through <span id="gc-through">-</span>. They refresh every Monday morning. Sales are Shopify total sales across every channel; average order is sales divided by orders.</p>
+  <p class="gc-foot">Numbers updated <span id="gc-updated">-</span>, through <span id="gc-through">-</span>. They refresh every morning. Sales are Shopify total sales across every channel; average order is sales divided by orders.</p>
 </div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 
+const FEED='https://docs.google.com/spreadsheets/d/1gS_HXDDOMgesnYfLIbZA_6gdbPRB4mlyu18TJZzpwcc/gviz/tq?tqx=out:json&sheet=data&headers=1';
 const DATASETS=['sales_this_year','sales_last_year','sales_daily','top_sellers','site_sessions','clubs','corporate_deals','box_supply','social','key_dates','projects'];
 const dash=(()=>{const store={},calcs=[],cbs=[];
  return {calc:(id,def)=>calcs.push([id,def]),
   data:(id)=>store[id]||{status:'loading'},
   onData:(cb)=>cbs.push(cb),
   async start(){
-   await Promise.all(DATASETS.map(async id=>{try{const r=await fetch('data/'+id+'.json',{cache:'no-cache'});if(!r.ok)throw 0;store[id]={status:'ok',data:await r.json()};}catch(e){store[id]={status:'error'};}}));
+   let feed={};
+   try{const r=await fetch(FEED,{cache:'no-cache'});const t=await r.text();const j=JSON.parse(t.slice(t.indexOf('{'),t.lastIndexOf('}')+1));
+    for(const row of j.table.rows){const k=row.c[0]&&row.c[0].v,v=row.c[1]&&row.c[1].v;if(k&&v)feed[k]=JSON.parse(v);}}catch(e){feed={};}
+   window.__feed=feed;
+   await Promise.all(DATASETS.map(async id=>{if(feed[id]){store[id]={status:'ok',data:feed[id]};return;}try{const r=await fetch('data/'+id+'.json',{cache:'no-cache'});if(!r.ok)throw 0;store[id]={status:'ok',data:await r.json()};}catch(e){store[id]={status:'error'};}}));
    for(const [id,def] of calcs){const ins=def.inputs.map(i=>store[i]);if(ins.some(x=>x.status!=='ok')){store[id]={status:'error'};continue;}try{store[id]={status:'ok',data:def.fn(...ins.map(x=>x.data))};}catch(e){store[id]={status:'error'};}}
    const run=()=>cbs.forEach(cb=>cb());run();
    let t;window.addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(run,150);});
@@ -830,8 +835,7 @@ dash.onData(() => {
 });
 
 
-fetch('data/meta.json',{cache:'no-cache'}).then(r=>r.json()).then(m=>{document.getElementById('gc-updated').textContent=d3.utcFormat('%b %-d, %Y')(parseDay(m.updated));document.getElementById('gc-through').textContent=dayFmt(parseDay(m.through));}).catch(()=>{});
-dash.start();
+dash.start().then(()=>window.__feed.meta||fetch('data/meta.json',{cache:'no-cache'}).then(r=>r.json())).then(m=>{document.getElementById('gc-updated').textContent=d3.utcFormat('%b %-d, %Y')(parseDay(m.updated));document.getElementById('gc-through').textContent=dayFmt(parseDay(m.through));}).catch(()=>{});
 
 </script>
 </body>
