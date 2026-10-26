@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Good Cheese at a Glance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --font-anthropic-sans: system-ui; --page: #F8F0E8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page: #000000; } }
+:root[data-theme="dark"] { --page: #000000; }
+html, body { margin: 0; background: var(--page); }
+body { padding: 16px; box-sizing: border-box; }
+.gc { max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
+.dash-skeleton { color: transparent; }
+</style>
+<style>
+.gc {
+  --gc-wine: #901840; --gc-gold: #F0B810; --gc-butter: #FCEB9B; --gc-cream: #F8F0E8; --gc-white: #FFFFFF; --gc-black: #000000; --gc-soft: #4D4D4D;
+  --gc-ground: var(--gc-cream); --gc-card: var(--gc-white); --gc-ink: var(--gc-black); --gc-muted: var(--gc-soft); --gc-line: var(--gc-black); --gc-grid: rgba(0, 0, 0, 0.12);
+  --gc-this: var(--gc-wine); --gc-ly: var(--gc-gold); --gc-target: var(--gc-black); --gc-booked: var(--gc-wine); --gc-pipe: var(--gc-gold); --gc-boxes: var(--gc-wine); --gc-social: var(--gc-wine); --gc-track: var(--gc-cream); --gc-hover: var(--gc-butter);
+  --gc-display: "ABC Ginto Nord", "Montserrat", var(--font-anthropic-sans), sans-serif;
+  --gc-body: "ABC Ginto Normal", "Montserrat", var(--font-anthropic-sans), sans-serif;
+  display: grid; gap: 32px; padding: 24px; background: var(--gc-ground); color: var(--gc-ink); font-family: var(--gc-body); font-size: 16px; line-height: 1.375; border: 1px solid var(--gc-line); border-radius: 0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .gc {
+    --gc-ground: var(--gc-black); --gc-card: var(--gc-black); --gc-ink: var(--gc-cream); --gc-muted: rgba(248, 240, 232, 0.72); --gc-line: var(--gc-cream); --gc-grid: rgba(248, 240, 232, 0.18);
+    --gc-this: var(--gc-butter); --gc-ly: var(--gc-gold); --gc-target: var(--gc-cream); --gc-booked: var(--gc-butter); --gc-pipe: var(--gc-gold); --gc-boxes: var(--gc-butter); --gc-social: var(--gc-butter); --gc-track: var(--gc-black); --gc-hover: var(--gc-wine);
+  }
+}
+:root[data-theme="dark"] .gc {
+  --gc-ground: var(--gc-black); --gc-card: var(--gc-black); --gc-ink: var(--gc-cream); --gc-muted: rgba(248, 240, 232, 0.72); --gc-line: var(--gc-cream); --gc-grid: rgba(248, 240, 232, 0.18);
+  --gc-this: var(--gc-butter); --gc-ly: var(--gc-gold); --gc-target: var(--gc-cream); --gc-booked: var(--gc-butter); --gc-pipe: var(--gc-gold); --gc-boxes: var(--gc-butter); --gc-social: var(--gc-butter); --gc-track: var(--gc-black); --gc-hover: var(--gc-wine);
+}
+.gc *, .gc *::before, .gc *::after { border-radius: 0; box-shadow:none; }
+.gc-head { background: var(--gc-wine); color: var(--gc-cream); padding: 24px; margin: -24px -24px 0; }
+.gc-kicker { font-size: 12px; text-transform: uppercase; letter-spacing: 0.125em; color: var(--gc-butter); }
+.gc-head h1 { font-family: var(--gc-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; font-size: clamp(28px, 5vw, 44px); color: var(--gc-butter); margin: 8px 0 0; text-wrap: balance; }
+.gc-take { margin: 12px 0 0; font-size: 16px; max-width: 68ch; color: var(--gc-cream); }
+.gc-section { display: grid; gap: 16px; }
+.gc-section > h2 { margin: 0; font-family: var(--gc-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; font-size: 22px; }
+.gc-section > h2::after { content: ""; display: block; width: 48px; height: 4px; margin-top: 8px; background: var(--gc-gold); }
+.gc-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr)); gap: 16px; }
+.gc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 16px; }
+.gc-card { background: var(--gc-card); border: 1px solid var(--gc-line); padding: 20px; min-width: 0; }
+.gc-wide { grid-column: 1 / -1; }
+.gc-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 16px; min-width: 0; }
+.gc-card h3 { margin: 0; font-family: var(--gc-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; font-size: 16px; }
+.gc-note { margin: 8px 0 16px; font-size: 14px; color: var(--gc-muted); }
+.gc-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.125em; color: var(--gc-muted); }
+.gc-num { font-family: var(--gc-display); font-weight: 800; font-size: 28px; font-variant-numeric: tabular-nums; line-height: 1.1; letter-spacing: 0.02em; margin-top: 8px; min-height: 1.1em; }
+.gc-delta { margin-top: 8px; font-size: 13px; color: var(--gc-muted); }
+.gc-delta span { font-weight: 700; color: var(--gc-ink); }
+.gc-chart { position: relative; min-height: 240px; }
+.gc-chart.gc-short { min-height: 180px; }
+.gc-chart svg text { font-family: var(--gc-body); }
+.gc-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.125em; color: var(--gc-muted); }
+.gc-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.gc-sw { display: inline-block; width: 12px; height: 12px; border: 1px solid var(--gc-line); }
+.gc-sw-this { background: var(--gc-this); }
+.gc-sw-booked { background: var(--gc-booked); }
+.gc-sw-pipe { background: var(--gc-pipe); }
+.gc-sw-line { display: inline-block; width: 16px; height: 0; border-top: 3px solid var(--gc-ly); }
+.gc-sw-dash { display: inline-block; width: 16px; height: 0; border-top: 2px dashed var(--gc-target); }
+.gc-tip { position: absolute; pointer-events: none; background: var(--gc-card); color: var(--gc-ink); border: 1px solid var(--gc-line); padding: 8px 12px; font-size: 13px; white-space: nowrap; z-index: 2; }
+.gc-tip .gc-tip-head { font-size: 11px; text-transform: uppercase; letter-spacing: 0.125em; color: var(--gc-muted); margin-bottom: 4px; }
+.gc-bars { display: grid; gap: 12px; min-height: 120px; }
+.gc-bar-row { display: grid; grid-template-columns: minmax(7rem, 9rem) 1fr auto; align-items: center; gap: 12px; font-size: 14px; }
+.gc-bar-track { height: 12px; background: var(--gc-track); border: 1px solid var(--gc-line); overflow: hidden; display: flex; }
+.gc-bar-fill { height: 100%; background: var(--gc-this); }
+.gc-bar-val { font-variant-numeric: tabular-nums; text-align: right; min-width: 4.5rem; font-weight: 700; }
+.gc-progress { height: 16px; background: var(--gc-track); border: 1px solid var(--gc-line); overflow: hidden; margin: 8px 0 12px; display: flex; }
+.gc-progress > div { height: 100%; }
+#corp-booked { background: var(--gc-booked); }
+#corp-pipe { background: var(--gc-pipe); }
+#corp-pipe { border-left: 1px solid var(--gc-line); }
+#corp-boxes { background: var(--gc-boxes); }
+.gc-pairs { display: grid; gap: 8px; margin-top: 12px; font-size: 14px; }
+.gc-pairs div { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--gc-grid); padding-top: 8px; }
+.gc-pairs b { font-weight: 700; font-variant-numeric: tabular-nums; }
+.gc-corp { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 24px; }
+.gc-corp-main, .gc-corp-table { min-width: 0; }
+.gc-corp-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr)); gap: 16px; margin-bottom: 20px; }
+.gc-bar-cap { margin-top: 12px; }
+.gc-corp-table { overflow-x: auto; }
+.gc-table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+.gc-table th { text-align: left; font-weight: 400; font-size: 11px; text-transform: uppercase; letter-spacing: 0.125em; color: var(--gc-muted); border-bottom: 1px solid var(--gc-line); padding: 8px 12px 8px 0; }
+.gc-table th:not(:first-child), .gc-numcell { text-align: right; }
+.gc-table td { padding: 8px 12px 8px 0; border-bottom: 1px solid var(--gc-grid); }
+.gc-table tr:last-child td { border-bottom: 0; }
+.gc-table td:first-child { font-weight: 700; }
+.gc-dates { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 12px 24px; min-height: 120px; }
+.gc-dates li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 12px; font-size: 15px; border-top: 1px solid var(--gc-grid); padding-top: 8px; }
+.gc-dates .gc-when { font-family: var(--gc-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; color: var(--gc-ink); }
+.gc-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 16px; min-height: 160px; }
+.gc-proj { display: flex; flex-direction: column; gap: 8px; color: inherit; text-decoration: none; }
+.gc-proj:hover { background: var(--gc-hover); }
+.gc-proj:focus-visible { outline: 2px solid var(--gc-gold); outline-offset: 2px; }
+.gc-proj-doc { font-family: var(--gc-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; font-size: 17px; }
+.gc-proj-about { font-size: 14px; color: var(--gc-muted); flex: 1; }
+.gc-proj-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.gc-proj-upd { font-size: 12px; color: var(--gc-muted); }
+.gc-open { flex: none; font-size: 14px; text-transform: uppercase; letter-spacing: 0.125em; font-weight: 700; background: var(--gc-butter); color: var(--gc-black); border: 1px solid var(--gc-black); padding: 6px 12px; }
+.gc-tops td:nth-child(2), .gc-tops td:nth-child(3) { text-align: right; }
+.gc-conv { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr); gap: 24px; align-items: start; }
+.gc-conv-figs { display: grid; gap: 16px; }
+@media (max-width: 40rem) { .gc-conv { grid-template-columns: 1fr; } .gc-conv-figs { grid-template-columns: 1fr 1fr; } }
+.gc-foot { font-size: 13px; color: var(--gc-muted); border-top: 1px solid var(--gc-line); padding-top: 12px; margin: 0; }
+.gc-fail { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: inherit; color: var(--gc-muted); font-size: 13px; }
+.gc-fail::before { content: ""; width: 6px; height: 6px; background: var(--gc-wine); }
+.gc [data-dash-source-state=empty] { color: transparent; }
+.gc [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+@media (max-width: 30rem) {
+  .gc { padding: 16px; gap: 24px; }
+  .gc-head { padding: 20px 16px; margin: -16px -16px 0; }
+  .gc-bar-row { grid-template-columns: 6rem 1fr auto; }
+  .gc-num { font-size: 22px; }
+  .gc-card { padding: 16px; }
+  .gc-tiles { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="gc">
+  <header class="gc-head" id="top">
+    <div class="gc-kicker">Good Cheese, 614 Gerrard St E</div>
+    <h1>Good Cheese at a Glance</h1>
+    <p class="gc-take"><span data-source="latest_week" data-field="week" data-row="0" data-fmt="weekof" class="dash-skeleton">-</span>: <span data-source="latest_week" data-field="total" data-row="0" data-fmt="money">-</span> in sales, <span data-source="latest_week" data-field="total_change" data-row="0" data-fmt="pctword">-</span> on the same week last year.</p>
+  </header>
+
+  <section class="gc-section" id="the-quarter">
+    <h2>The quarter so far</h2>
+    <p class="gc-note" style="margin:0">Through <span data-source="period_totals" data-field="asof" data-row="0" data-fmt="day">-</span>, against the same dates last year.</p>
+    <div class="gc-tiles">
+      <div class="gc-card"><div class="gc-label" data-source="period_totals" data-field="month_label" data-row="0">Month so far</div><div class="gc-num dash-skeleton" data-source="period_totals" data-field="mtd" data-row="0" data-fmt="money">-</div><div class="gc-delta"><span data-source="period_totals" data-field="mtd_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+      <div class="gc-card"><div class="gc-label" data-source="period_totals" data-field="q_label" data-row="0">Quarter so far</div><div class="gc-num dash-skeleton" data-source="period_totals" data-field="qtd" data-row="0" data-fmt="money">-</div><div class="gc-delta"><span data-source="period_totals" data-field="qtd_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+      <div class="gc-card"><div class="gc-label" data-source="period_totals" data-field="ly_q_label" data-row="0">Last year's quarter</div><div class="gc-num dash-skeleton" data-source="period_totals" data-field="ly_q" data-row="0" data-fmt="money">-</div><div class="gc-delta"><span data-source="period_totals" data-field="q_share" data-row="0" data-fmt="pct0">-</span> of it matched so far</div></div>
+    </div>
+  </section>
+
+  <section class="gc-section" id="the-shop">
+    <h2>The shop, last full week</h2>
+    <div class="gc-tiles">
+      <div class="gc-card"><div class="gc-label">Total sales</div><div class="gc-num dash-skeleton" data-source="latest_week" data-field="total" data-row="0" data-fmt="money">-</div><div class="gc-delta"><span data-source="latest_week" data-field="total_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+      <div class="gc-card"><div class="gc-label">The counter</div><div class="gc-num dash-skeleton" data-source="latest_week" data-field="counter" data-row="0" data-fmt="money">-</div><div class="gc-delta"><span data-source="latest_week" data-field="counter_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+      <div class="gc-card"><div class="gc-label">Online</div><div class="gc-num dash-skeleton" data-source="latest_week" data-field="online" data-row="0" data-fmt="money">-</div><div class="gc-delta"><span data-source="latest_week" data-field="online_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+      <div class="gc-card"><div class="gc-label">Orders</div><div class="gc-num dash-skeleton" data-source="latest_week" data-field="orders" data-row="0" data-fmt="count">-</div><div class="gc-delta"><span data-source="latest_week" data-field="orders_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+      <div class="gc-card"><div class="gc-label">Average order</div><div class="gc-num dash-skeleton" data-source="latest_week" data-field="aov" data-row="0" data-fmt="money2">-</div><div class="gc-delta"><span data-source="latest_week" data-field="aov_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+      <div class="gc-card"><div class="gc-label">New customers</div><div class="gc-num dash-skeleton" data-source="latest_week" data-field="new_customers" data-row="0" data-fmt="count">-</div><div class="gc-delta"><span data-source="latest_week" data-field="new_customers_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+    </div>
+    <div class="gc-grid">
+      <div class="gc-card gc-wide" id="weekly-card">
+        <h3>Weekly sales</h3>
+        <p class="gc-note">Last 13 full weeks, Monday to Sunday, every channel, beside the same week last year.</p>
+        <div class="gc-legend"><span><i class="gc-sw gc-sw-this"></i>This year</span><span><i class="gc-sw-line"></i>Last year</span><span><i class="gc-sw-dash"></i>Weekly target, $52K</span></div>
+        <div class="gc-chart dash-skeleton" id="weekly-chart" data-source="weekly"></div>
+      </div>
+      <div class="gc-wide gc-two">
+      <div class="gc-card" id="mix-card">
+        <h3>Where last week's sales came from</h3>
+        <p class="gc-note">By sales channel, last full week.</p>
+        <div class="gc-bars dash-skeleton" id="mix" data-source="sales_mix"></div>
+      </div>
+      <div class="gc-card" id="tops-card">
+        <h3>Top 5 sellers</h3>
+        <p class="gc-note">By sales, last full week, every channel.</p>
+        <table class="gc-table gc-tops" data-source="top_sellers" data-row-key="product">
+          <thead><tr><th data-field="product">Product</th><th data-field="units">Units</th><th data-field="total_sales">Sales</th></tr></thead>
+          <tbody id="tops-rows"></tbody>
+        </table>
+      </div>
+      </div>
+      <div class="gc-card gc-wide" id="conv-card">
+        <h3>Online conversion</h3>
+        <p class="gc-note">Share of online store visits that ended in an order, each week beside the same week last year.</p>
+        <div class="gc-conv">
+          <div class="gc-conv-figs">
+            <div><div class="gc-label">Last full week</div><div class="gc-num dash-skeleton" data-source="conversion_latest" data-field="rate" data-row="0" data-fmt="pct1">-</div><div class="gc-delta"><span data-source="conversion_latest" data-field="rate_change" data-row="0" data-fmt="pts">-</span> vs last year</div></div>
+            <div><div class="gc-label">Online visits</div><div class="gc-num dash-skeleton" data-source="conversion_latest" data-field="sessions" data-row="0" data-fmt="count">-</div><div class="gc-delta"><span data-source="conversion_latest" data-field="sessions_change" data-row="0" data-fmt="pct">-</span> vs last year</div></div>
+          </div>
+          <div>
+            <div class="gc-legend"><span><i class="gc-sw gc-sw-this"></i>This year</span><span><i class="gc-sw-line"></i>Last year</span></div>
+            <div class="gc-chart gc-short dash-skeleton" id="conv-chart" data-source="conversion_weekly"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gc-section" id="the-season">
+    <h2>The holiday season</h2>
+    <div class="gc-grid">
+      <div class="gc-card gc-wide" id="corporate-card">
+        <h3>Corporate gifting</h3>
+        <p class="gc-note">This season against the $100K goal. The pipeline is an estimate: boxes times budget per box for every open deal.</p>
+        <div class="gc-corp">
+          <div class="gc-corp-main">
+            <div class="gc-corp-figs">
+              <div><div class="gc-label">Booked</div><div class="gc-num dash-skeleton" data-source="corporate_progress" data-field="booked" data-row="0" data-fmt="money">-</div></div>
+              <div><div class="gc-label">Pipeline, estimated</div><div class="gc-num dash-skeleton" data-source="corporate_progress" data-field="pipeline_est" data-row="0" data-fmt="money">-</div></div>
+              <div><div class="gc-label">Boxes in the pipeline</div><div class="gc-num dash-skeleton" data-source="corporate_progress" data-field="boxes_in_play" data-row="0" data-fmt="count">-</div></div>
+            </div>
+            <div class="gc-label gc-bar-cap">Booked and pipeline against $100K</div>
+            <div class="gc-progress" data-source="corporate_progress"><div id="corp-booked"></div><div id="corp-pipe"></div></div>
+            <div class="gc-legend"><span><i class="gc-sw gc-sw-booked"></i>Booked</span><span><i class="gc-sw gc-sw-pipe"></i>Pipeline, estimated</span></div>
+            <div class="gc-label gc-bar-cap">Boxes in the pipeline against the first <span data-source="corporate_progress" data-field="boxes_first" data-row="0" data-fmt="count">-</span> boxes (landing <span data-source="corporate_progress" data-field="first_lands" data-row="0" data-fmt="day">-</span>)</div>
+            <div class="gc-progress" data-source="corporate_progress"><div id="corp-boxes"></div></div>
+            <div class="gc-pairs">
+              <div><span>Share of the first boxes spoken for</span><b data-source="corporate_progress" data-field="boxes_first_share" data-row="0" data-fmt="pct0">-</b></div>
+              <div><span>All new boxes on order this season</span><b data-source="corporate_progress" data-field="boxes_total" data-row="0" data-fmt="count">-</b></div>
+            </div>
+          </div>
+          <div class="gc-corp-table">
+            <table class="gc-table" data-source="corporate_pipeline" data-row-key="stage">
+              <thead><tr><th data-field="stage">Stage</th><th data-field="deals">Deals</th><th data-field="boxes">Boxes</th><th data-field="value">Value</th></tr></thead>
+              <tbody id="corp-rows"></tbody>
+            </table>
+            <div class="gc-pairs">
+              <div><span>Open deals with boxes but no budget yet (boxes counted, no value)</span><b data-source="corporate_progress" data-field="no_budget" data-row="0" data-fmt="count">-</b></div>
+              <div><span>Boxes for next year's gifts (not counted)</span><b data-source="corporate_progress" data-field="later_boxes" data-row="0" data-fmt="count">-</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gc-card gc-wide" id="dates-card">
+        <h3>Key dates</h3>
+        <p class="gc-note">Confirmed dates between now and Christmas.</p>
+        <ul class="gc-dates dash-skeleton" id="dates" data-source="key_dates"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="gc-section" id="clubs">
+    <h2>Clubs and community</h2>
+    <div class="gc-tiles">
+      <div class="gc-card"><div class="gc-label">Cheese Club members</div><div class="gc-num dash-skeleton" data-source="clubs" data-where="measure=cheese_club" data-field="value" data-fmt="count">-</div><div class="gc-delta">Active members</div></div>
+      <div class="gc-card"><div class="gc-label">Conservas Club members</div><div class="gc-num dash-skeleton" data-source="clubs" data-where="measure=conservas_club" data-field="value" data-fmt="count">-</div><div class="gc-delta">Active members</div></div>
+      <div class="gc-card"><div class="gc-label">Email subscribers</div><div class="gc-num dash-skeleton" data-source="clubs" data-where="measure=email_subscribers" data-field="value" data-fmt="count">-</div><div class="gc-delta">Signed up for email</div></div>
+    </div>
+    <div class="gc-card" id="social-card">
+      <h3>Instagram views by week</h3>
+      <p class="gc-note">@goodcheeseto. Paler bars are part weeks.</p>
+      <div class="gc-chart gc-short dash-skeleton" id="social-chart" data-source="social"></div>
+    </div>
+  </section>
+
+  <section class="gc-section" id="projects">
+    <h2>Projects</h2>
+    <p class="gc-note" style="margin:0">The one live document for each part of the work, kept current every week. Earlier versions sit in each folder's Archive in Google Drive.</p>
+    <div class="gc-projects dash-skeleton" id="project-list" data-source="projects"></div>
+  </section>
+
+  <p class="gc-foot">Numbers updated <span id="gc-updated">-</span>, through <span id="gc-through">-</span>. They refresh every Monday morning. Sales are Shopify total sales across every channel; average order is sales divided by orders.</p>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+
+const DATASETS=['sales_this_year','sales_last_year','sales_daily','top_sellers','site_sessions','clubs','corporate_deals','box_supply','social','key_dates','projects'];
+const dash=(()=>{const store={},calcs=[],cbs=[];
+ return {calc:(id,def)=>calcs.push([id,def]),
+  data:(id)=>store[id]||{status:'loading'},
+  onData:(cb)=>cbs.push(cb),
+  async start(){
+   await Promise.all(DATASETS.map(async id=>{try{const r=await fetch('data/'+id+'.json',{cache:'no-cache'});if(!r.ok)throw 0;store[id]={status:'ok',data:await r.json()};}catch(e){store[id]={status:'error'};}}));
+   for(const [id,def] of calcs){const ins=def.inputs.map(i=>store[i]);if(ins.some(x=>x.status!=='ok')){store[id]={status:'error'};continue;}try{store[id]={status:'ok',data:def.fn(...ins.map(x=>x.data))};}catch(e){store[id]={status:'error'};}}
+   const run=()=>cbs.forEach(cb=>cb());run();
+   let t;window.addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(run,150);});
+  }};})();
+
+
+dash.calc('weekly', {
+  title: 'Weekly sales vs last year',
+  description: 'Sales by Monday to Sunday week, split by channel, beside the same week last year (52 weeks earlier).',
+  inputs: ['sales_this_year', 'sales_last_year'],
+  fn: (sales_this_year, sales_last_year) => {
+    const DAY = 86400000;
+    const groupOf = (c) => c === 'Point of Sale' ? 'counter' : c === 'Online Store' ? 'online' : c === 'Seal Subscriptions' ? 'clubs' : c === 'Draft Orders' ? 'trade' : 'other';
+    const blank = () => ({ total: 0, counter: 0, online: 0, clubs: 0, trade: 0, other: 0, orders: 0, new_customers: 0 });
+    const add = (map, r, key) => {
+      const w = map.get(key) || blank();
+      const s = Number(r.total_sales) || 0;
+      w.total += s;
+      w[groupOf(r.sales_channel)] += s;
+      w.orders += Number(r.orders) || 0;
+      w.new_customers += Number(r.new_customers) || 0;
+      map.set(key, w);
+    };
+    const now = new Map();
+    const before = new Map();
+    for (const r of sales_this_year) add(now, r, String(r.week).slice(0, 10));
+    for (const r of sales_last_year) {
+      const shifted = new Date(Date.parse(String(r.week).slice(0, 10) + 'T00:00:00Z') + 364 * DAY).toISOString().slice(0, 10);
+      add(before, r, shifted);
+    }
+    const r2 = (x) => Math.round(x * 100) / 100;
+    return [...now.keys()].sort().map((week) => {
+      const a = now.get(week);
+      const b = before.get(week) || blank();
+      return { week, total: r2(a.total), counter: r2(a.counter), online: r2(a.online), clubs: r2(a.clubs), trade: r2(a.trade), other: r2(a.other), orders: a.orders, new_customers: a.new_customers, ly_total: r2(b.total), ly_counter: r2(b.counter), ly_online: r2(b.online), ly_orders: b.orders, ly_new_customers: b.new_customers };
+    });
+  },
+});
+
+dash.calc('latest_week', {
+  title: 'Last full week vs last year',
+  description: 'The most recent full week, with each figure\'s change on the same week last year.',
+  inputs: ['weekly'],
+  fn: (weekly) => {
+    const w = weekly[weekly.length - 1];
+    if (!w) return [];
+    const ch = (a, b) => (b ? Math.round((a / b - 1) * 1000) / 1000 : null);
+    const aov = w.orders ? Math.round((w.total / w.orders) * 100) / 100 : null;
+    const ly_aov = w.ly_orders ? w.ly_total / w.ly_orders : null;
+    return [{ week: w.week, aov, aov_change: aov !== null && ly_aov ? ch(aov, ly_aov) : null, total: w.total, total_change: ch(w.total, w.ly_total), counter: w.counter, counter_change: ch(w.counter, w.ly_counter), online: w.online, online_change: ch(w.online, w.ly_online), orders: w.orders, orders_change: ch(w.orders, w.ly_orders), new_customers: w.new_customers, new_customers_change: ch(w.new_customers, w.ly_new_customers) }];
+  },
+});
+
+dash.calc('sales_mix', {
+  title: 'Last week by channel',
+  description: 'The last full week\'s sales split into the counter, online, trade and corporate orders, clubs and other channels.',
+  inputs: ['weekly'],
+  fn: (weekly) => {
+    const w = weekly[weekly.length - 1];
+    if (!w) return [];
+    return [
+      { channel: 'The counter', sales: w.counter },
+      { channel: 'Online', sales: w.online },
+      { channel: 'Trade and corporate', sales: w.trade },
+      { channel: 'Clubs', sales: w.clubs },
+      { channel: 'Other', sales: w.other },
+    ];
+  },
+});
+
+dash.calc('corporate_pipeline', {
+  title: 'Corporate deals by stage',
+  description: 'This season\'s corporate deals by stage: deals, boxes, and value (booked value for won deals, boxes times budget per box for the rest). Lost deals and next year\'s gifts are left out.',
+  inputs: ['corporate_deals'],
+  fn: (corporate_deals) => {
+    const order = ['Won', 'Confirmed count', 'Quote sent', 'Quote owed', 'Contacted', 'Inquiry', 'On hold', 'No reply'];
+    const m = new Map();
+    for (const d of corporate_deals) {
+      if (String(d.season) !== '2026' || d.stage === 'Lost') continue;
+      const s = m.get(d.stage) || { stage: d.stage, deals: 0, boxes: 0, value: 0 };
+      s.deals += 1;
+      const boxes = Number(d.boxes) || 0;
+      s.boxes += boxes;
+      if (d.stage === 'Won') s.value += Number(d.booked_value) || 0;
+      else s.value += boxes * (Number(d.budget_per_box) || 0);
+      m.set(d.stage, s);
+    }
+    const rank = (s) => (order.indexOf(s) === -1 ? 99 : order.indexOf(s));
+    return [...m.values()].map((s) => ({ ...s, value: Math.round(s.value * 100) / 100 })).sort((a, b) => rank(a.stage) - rank(b.stage));
+  },
+});
+
+dash.calc('corporate_progress', {
+  title: 'Corporate gifting vs $100K',
+  description: 'Booked so far and the estimated pipeline (boxes times budget per box for open deals) against the $100K goal, and boxes in the pipeline against the new boxes on order.',
+  inputs: ['corporate_pipeline', 'corporate_deals', 'box_supply'],
+  fn: (corporate_pipeline, corporate_deals, box_supply) => {
+    const closed = ['Won', 'Lost', 'No reply'];
+    let booked = 0, pipeline_est = 0, boxes_in_play = 0;
+    for (const s of corporate_pipeline) {
+      if (s.stage === 'Won') { booked += s.value; boxes_in_play += s.boxes; continue; }
+      if (closed.includes(s.stage)) continue;
+      pipeline_est += s.value;
+      boxes_in_play += s.boxes;
+    }
+    const open = corporate_deals.filter((d) => String(d.season) === '2026' && !closed.includes(d.stage));
+    const no_budget = open.filter((d) => Number(d.boxes) > 0 && !(Number(d.budget_per_box) > 0)).length;
+    const later_boxes = corporate_deals.filter((d) => String(d.season) !== '2026').reduce((n, d) => n + (Number(d.boxes) || 0), 0);
+    const sorted = [...box_supply].sort((a, b) => String(a.lands).localeCompare(String(b.lands)));
+    const first = sorted[0] || { boxes: 0, lands: null };
+    const boxes_total = box_supply.reduce((n, b) => n + (Number(b.boxes) || 0), 0);
+    const r2 = (x) => Math.round(x * 100) / 100;
+    return [{
+      booked: r2(booked),
+      pipeline_est: r2(pipeline_est),
+      share: Math.round((booked / 100000) * 1000) / 1000,
+      pipeline_share: Math.round((pipeline_est / 100000) * 1000) / 1000,
+      boxes_in_play,
+      boxes_first: Number(first.boxes) || 0,
+      first_lands: first.lands,
+      boxes_first_share: first.boxes ? Math.round((boxes_in_play / first.boxes) * 1000) / 1000 : null,
+      boxes_total,
+      no_budget,
+      later_boxes,
+    }];
+  },
+});
+
+dash.calc('period_totals', {
+  title: 'Month and quarter so far vs last year',
+  description: 'Sales this month and this quarter through the latest day, against the same calendar dates last year, and last year\'s whole quarter.',
+  inputs: ['sales_daily'],
+  fn: (sales_daily) => {
+    const days = sales_daily.map((r) => String(r.day).slice(0, 10)).sort();
+    const asof = days[days.length - 1];
+    if (!asof) return [];
+    const y = Number(asof.slice(0, 4));
+    const m = Number(asof.slice(5, 7));
+    const md = asof.slice(5);
+    const qStart = Math.floor((m - 1) / 3) * 3 + 1;
+    const qEnd = qStart + 2;
+    let mtd = 0, mly = 0, qtd = 0, qly = 0, qfull = 0;
+    for (const r of sales_daily) {
+      const d = String(r.day).slice(0, 10);
+      const yr = Number(d.slice(0, 4));
+      const mo = Number(d.slice(5, 7));
+      const s = Number(r.total_sales) || 0;
+      if (mo < qStart || mo > qEnd) continue;
+      if (yr === y) { qtd += s; if (mo === m) mtd += s; }
+      else if (yr === y - 1) { qfull += s; if (d.slice(5) <= md) { qly += s; if (mo === m) mly += s; } }
+    }
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const q = (qStart + 2) / 3;
+    const r2 = (x) => Math.round(x * 100) / 100;
+    const ch = (a, b) => (b ? Math.round((a / b - 1) * 1000) / 1000 : null);
+    return [{
+      asof,
+      month_label: months[m - 1] + ' so far',
+      mtd: r2(mtd), mtd_change: ch(mtd, mly),
+      q_label: 'Q' + q + ' so far',
+      qtd: r2(qtd), qtd_change: ch(qtd, qly),
+      ly_q_label: 'Last year\'s whole Q' + q,
+      ly_q: r2(qfull),
+      q_share: qfull ? Math.round((qtd / qfull) * 1000) / 1000 : null,
+    }];
+  },
+});
+
+dash.calc('conversion_weekly', {
+  title: 'Online conversion by week vs last year',
+  description: 'Share of online store sessions that completed checkout, by Monday to Sunday week, beside the same week last year (52 weeks earlier).',
+  inputs: ['site_sessions'],
+  fn: (site_sessions) => {
+    const DAY = 86400000;
+    const now = new Map();
+    const before = new Map();
+    for (const r of site_sessions) {
+      const wk = String(r.week).slice(0, 10);
+      if (r.period === 'last_year') {
+        const shifted = new Date(Date.parse(wk + 'T00:00:00Z') + 364 * DAY).toISOString().slice(0, 10);
+        before.set(shifted, r);
+      } else {
+        now.set(wk, r);
+      }
+    }
+    return [...now.keys()].sort().map((week) => {
+      const a = now.get(week);
+      const b = before.get(week);
+      const rate = a.sessions ? a.sessions_converted / a.sessions : null;
+      const ly_rate = b && b.sessions ? b.sessions_converted / b.sessions : null;
+      return { week, sessions: Number(a.sessions) || 0, rate: rate === null ? null : Math.round(rate * 100000) / 100000, ly_sessions: b ? Number(b.sessions) || 0 : null, ly_rate: ly_rate === null ? null : Math.round(ly_rate * 100000) / 100000 };
+    });
+  },
+});
+
+dash.calc('conversion_latest', {
+  title: 'Online conversion, last full week',
+  description: 'The latest week\'s online conversion rate and visits, with the change on the same week last year.',
+  inputs: ['conversion_weekly'],
+  fn: (conversion_weekly) => {
+    const w = conversion_weekly[conversion_weekly.length - 1];
+    if (!w) return [];
+    return [{ week: w.week, rate: w.rate, rate_change: w.rate !== null && w.ly_rate !== null ? Math.round((w.rate - w.ly_rate) * 100000) / 100000 : null, sessions: w.sessions, sessions_change: w.ly_sessions ? Math.round((w.sessions / w.ly_sessions - 1) * 1000) / 1000 : null }];
+  },
+});
+
+const TARGET = 52000;
+const money = d3.format('$,.0f');
+const count = d3.format(',');
+const whole = d3.format('.0%');
+const dayFmt = d3.utcFormat('%b %-d');
+const parseDay = (s) => new Date(String(s).slice(0, 10) + 'T00:00:00Z');
+const axisMoney = (v) => (v === 0 ? '$0' : '$' + Math.round(v / 1000) + 'K');
+const fmts = {
+  money: (v) => money(v),
+  count: (v) => count(v),
+  pct: (v) => (v > 0 ? '▲ ' : v < 0 ? '▼ ' : '') + whole(Math.abs(v)),
+  pctword: (v) => (v >= 0 ? 'up ' : 'down ') + whole(Math.abs(v)),
+  weekof: (v) => 'Week of ' + dayFmt(parseDay(v)),
+  day: (v) => dayFmt(parseDay(v)),
+  pct0: (v) => whole(v),
+  pct1: (v) => d3.format('.1%')(v),
+  pts: (v) => (v > 0 ? '\u25B2 ' : v < 0 ? '\u25BC ' : '') + (Math.abs(v) * 100).toFixed(1) + ' pts',
+  money2: (v) => d3.format('$,.2f')(v),
+};
+
+function setFail(el) {
+  el.replaceChildren();
+  const d = document.createElement('div');
+  d.className = 'gc-fail';
+  d.textContent = 'Failed to load';
+  el.appendChild(d);
+  el.classList.remove('dash-skeleton');
+}
+
+function fillMarks(id) {
+  const res = dash.data(id);
+  const els = document.querySelectorAll('.gc [data-source="' + id + '"][data-field]');
+  els.forEach((el) => {
+    if (res.status !== 'ok') {
+      el.textContent = '-';
+      if (res.status !== 'loading') el.classList.remove('dash-skeleton');
+      return;
+    }
+    let row;
+    if (el.dataset.where) {
+      const [k, v] = el.dataset.where.split('=');
+      row = res.data.find((r) => String(r[decodeURIComponent(k)]) === decodeURIComponent(v));
+    } else {
+      row = res.data[Number(el.dataset.row || 0)];
+    }
+    const v = row ? row[el.dataset.field] : null;
+    el.classList.remove('dash-skeleton');
+    if (v === null || v === undefined || v === '') { el.textContent = '-'; return; }
+    el.textContent = (fmts[el.dataset.fmt] || String)(v);
+  });
+}
+
+function measure(svg, texts) {
+  const t = svg.append('text').attr('font-size', 11).attr('visibility', 'hidden');
+  let w = 0;
+  for (const s of texts) { t.text(s); w = Math.max(w, t.node().getComputedTextLength()); }
+  t.remove();
+  return w;
+}
+
+function failed(res) {
+  return res.status === 'error' || res.status === 'connect' || res.status === 'declined' || res.status === 'missing';
+}
+
+function drawWeekly() {
+  const el = document.getElementById('weekly-chart');
+  const res = dash.data('weekly');
+  if (failed(res)) { setFail(el); return; }
+  if (res.status !== 'ok') return;
+  const rows = res.data;
+  el.replaceChildren();
+  el.classList.remove('dash-skeleton');
+  if (!rows.length) return;
+  const w = Math.max(280, el.clientWidth || 600);
+  const h = 240;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${w} ${h}`).attr('role', 'img').attr('aria-label', 'Weekly sales this year and last year');
+  const maxV = d3.max(rows, (r) => Math.max(r.total, r.ly_total, TARGET));
+  const y = d3.scaleLinear([0, maxV * 1.05], [h - 26, 10]).nice();
+  const ticks = y.ticks(4);
+  const left = Math.ceil(measure(svg, ticks.map(axisMoney))) + 10;
+  const right = Math.ceil(measure(svg, ['Target'])) + 10;
+  const x = d3.scaleBand(rows.map((r) => r.week), [left, w - right]).padding(0.28);
+  svg.append('g').selectAll('line').data(ticks).join('line')
+    .attr('x1', left).attr('x2', w - right).attr('y1', (d) => y(d)).attr('y2', (d) => y(d))
+    .style('stroke', 'var(--gc-grid)').attr('stroke-width', 1);
+  svg.append('g').selectAll('text').data(ticks).join('text')
+    .attr('x', left - 8).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end')
+    .attr('font-size', 11).style('fill', 'var(--gc-muted)').text(axisMoney);
+  svg.append('g').selectAll('rect').data(rows).join('rect')
+    .attr('x', (d) => x(d.week)).attr('width', x.bandwidth())
+    .attr('y', (d) => y(Math.max(0, d.total))).attr('height', (d) => y(0) - y(Math.max(0, d.total)))
+    .style('fill', 'var(--gc-this)');
+  svg.append('line').attr('x1', left).attr('x2', w - right).attr('y1', y(TARGET)).attr('y2', y(TARGET))
+    .style('stroke', 'var(--gc-target)').attr('stroke-width', 1.5).attr('stroke-dasharray', '6 4');
+  svg.append('text').attr('x', w - right + 6).attr('y', y(TARGET)).attr('dy', '0.32em')
+    .attr('font-size', 11).style('fill', 'var(--gc-muted)').text('Target');
+  const line = d3.line().x((d) => x(d.week) + x.bandwidth() / 2).y((d) => y(d.ly_total));
+  svg.append('path').datum(rows).attr('d', line).style('fill', 'none')
+    .style('stroke', 'var(--gc-ly)').attr('stroke-width', 3).attr('stroke-linecap', 'square').attr('stroke-linejoin', 'miter');
+  svg.append('g').selectAll('rect').data(rows).join('rect')
+    .attr('x', (d) => x(d.week) + x.bandwidth() / 2 - 3.5).attr('y', (d) => y(d.ly_total) - 3.5).attr('width', 7).attr('height', 7)
+    .style('fill', 'var(--gc-ly)').style('stroke', 'var(--gc-line)').attr('stroke-width', 1);
+  const labelW = measure(svg, ['Sep 28']) + 8;
+  const step = Math.max(1, Math.ceil(labelW / x.step()));
+  svg.append('g').selectAll('text').data(rows.filter((d, i) => (rows.length - 1 - i) % step === 0)).join('text')
+    .attr('x', (d) => x(d.week) + x.bandwidth() / 2).attr('y', h - 8).attr('text-anchor', 'middle')
+    .attr('font-size', 11).style('fill', 'var(--gc-muted)').text((d) => dayFmt(parseDay(d.week)));
+  const tip = document.createElement('div');
+  tip.className = 'gc-tip';
+  tip.hidden = true;
+  el.appendChild(tip);
+  svg.append('g').selectAll('rect').data(rows).join('rect')
+    .attr('x', (d) => x(d.week) - (x.step() - x.bandwidth()) / 2).attr('width', x.step())
+    .attr('y', 0).attr('height', h - 26).style('fill', 'transparent')
+    .on('mousemove', (event, d) => {
+      tip.replaceChildren();
+      const head = document.createElement('div');
+      head.className = 'gc-tip-head';
+      head.textContent = 'Week of ' + dayFmt(parseDay(d.week));
+      const a = document.createElement('div');
+      a.textContent = 'This year ' + money(d.total);
+      const b = document.createElement('div');
+      b.textContent = 'Last year ' + money(d.ly_total);
+      tip.append(head, a, b);
+      tip.hidden = false;
+      const [mx, my] = d3.pointer(event, el);
+      const tw = tip.offsetWidth;
+      const left2 = Math.min(Math.max(0, mx + 12), el.clientWidth - tw);
+      tip.style.left = left2 + 'px';
+      tip.style.top = Math.max(0, my - 56) + 'px';
+    })
+    .on('mouseleave', () => { tip.hidden = true; });
+}
+
+function drawMix() {
+  const el = document.getElementById('mix');
+  const res = dash.data('sales_mix');
+  if (failed(res)) { setFail(el); return; }
+  if (res.status !== 'ok') return;
+  el.replaceChildren();
+  el.classList.remove('dash-skeleton');
+  const max = d3.max(res.data, (r) => r.sales) || 1;
+  for (const r of res.data) {
+    const row = document.createElement('div');
+    row.className = 'gc-bar-row';
+    const name = document.createElement('span');
+    name.textContent = r.channel;
+    const track = document.createElement('div');
+    track.className = 'gc-bar-track';
+    const v = Math.max(0, Number(r.sales) || 0);
+    if (v) {
+      const f = document.createElement('div');
+      f.className = 'gc-bar-fill';
+      f.style.width = (v / max) * 100 + '%';
+      track.appendChild(f);
+    }
+    const val = document.createElement('span');
+    val.className = 'gc-bar-val';
+    val.textContent = money(r.sales);
+    row.append(name, track, val);
+    el.appendChild(row);
+  }
+}
+
+function drawCorporate() {
+  const res = dash.data('corporate_progress');
+  const row = res.status === 'ok' ? res.data[0] : null;
+  const booked = document.getElementById('corp-booked');
+  const pipe = document.getElementById('corp-pipe');
+  const boxes = document.getElementById('corp-boxes');
+  const bw = row ? Math.min(100, row.share * 100) : 0;
+  booked.style.width = bw + '%';
+  pipe.style.width = row ? Math.min(100 - bw, row.pipeline_share * 100) + '%' : '0%';
+  boxes.style.width = row && row.boxes_first_share !== null ? Math.min(100, row.boxes_first_share * 100) + '%' : '0%';
+
+  const body = document.getElementById('corp-rows');
+  const t = dash.data('corporate_pipeline');
+  body.replaceChildren();
+  if (t.status !== 'ok') return;
+  for (const s of t.data) {
+    const tr = document.createElement('tr');
+    tr.dataset.key = s.stage;
+    const cells = [s.stage, count(s.deals), s.boxes ? count(s.boxes) : '-', money(s.value)];
+    cells.forEach((v, i) => {
+      const td = document.createElement('td');
+      td.textContent = v;
+      if (i > 0) td.className = 'gc-numcell';
+      tr.appendChild(td);
+    });
+    body.appendChild(tr);
+  }
+}
+
+function drawTops() {
+  const body = document.getElementById('tops-rows');
+  const t = dash.data('top_sellers');
+  body.replaceChildren();
+  if (t.status !== 'ok') return;
+  for (const s of t.data.slice(0, 5)) {
+    const tr = document.createElement('tr');
+    tr.dataset.key = s.product;
+    [s.product, count(s.units), money(s.total_sales)].forEach((v, i) => {
+      const td = document.createElement('td');
+      td.textContent = v;
+      if (i > 0) td.className = 'gc-numcell';
+      tr.appendChild(td);
+    });
+    body.appendChild(tr);
+  }
+}
+
+function drawConversion() {
+  const el = document.getElementById('conv-chart');
+  const res = dash.data('conversion_weekly');
+  if (failed(res)) { setFail(el); return; }
+  if (res.status !== 'ok') return;
+  const rows = res.data.filter((r) => r.rate !== null);
+  el.replaceChildren();
+  el.classList.remove('dash-skeleton');
+  if (!rows.length) return;
+  const w = Math.max(280, el.clientWidth || 600);
+  const h = 180;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${w} ${h}`).attr('role', 'img').attr('aria-label', 'Online conversion rate by week, this year and last year');
+  const maxV = d3.max(rows, (r) => Math.max(r.rate || 0, r.ly_rate || 0));
+  const y = d3.scaleLinear([0, maxV * 1.1], [h - 26, 10]).nice();
+  const ticks = y.ticks(3);
+  const pf = d3.format('.1%');
+  const left = Math.ceil(measure(svg, ticks.map(pf))) + 10;
+  const x = d3.scalePoint(rows.map((r) => r.week), [left + 8, w - 12]);
+  svg.append('g').selectAll('line').data(ticks).join('line')
+    .attr('x1', left).attr('x2', w - 8).attr('y1', (d) => y(d)).attr('y2', (d) => y(d))
+    .style('stroke', 'var(--gc-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text')
+    .attr('x', left - 8).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end')
+    .attr('font-size', 11).style('fill', 'var(--gc-muted)').text(pf);
+  const series = [['ly_rate', 'var(--gc-ly)', 3], ['rate', 'var(--gc-this)', 3]];
+  for (const [f, col, sw] of series) {
+    const pts = rows.filter((r) => r[f] !== null);
+    svg.append('path').datum(pts).attr('d', d3.line().x((d) => x(d.week)).y((d) => y(d[f]))).style('fill', 'none')
+      .style('stroke', col).attr('stroke-width', sw).attr('stroke-linecap', 'square').attr('stroke-linejoin', 'miter');
+    svg.append('g').selectAll('rect').data(pts).join('rect')
+      .attr('x', (d) => x(d.week) - 3.5).attr('y', (d) => y(d[f]) - 3.5).attr('width', 7).attr('height', 7)
+      .style('fill', col).style('stroke', 'var(--gc-line)').attr('stroke-width', 1);
+  }
+  const labelW = measure(svg, ['Sep 28']) + 8;
+  const stepPx = rows.length > 1 ? (x(rows[1].week) - x(rows[0].week)) : w;
+  const step = Math.max(1, Math.ceil(labelW / stepPx));
+  svg.append('g').selectAll('text').data(rows.filter((d, i) => (rows.length - 1 - i) % step === 0)).join('text')
+    .attr('x', (d) => x(d.week)).attr('y', h - 8).attr('text-anchor', 'middle')
+    .attr('font-size', 11).style('fill', 'var(--gc-muted)').text((d) => dayFmt(parseDay(d.week)));
+}
+
+function drawDates() {
+  const el = document.getElementById('dates');
+  const res = dash.data('key_dates');
+  if (failed(res)) { setFail(el); return; }
+  if (res.status !== 'ok') return;
+  el.replaceChildren();
+  el.classList.remove('dash-skeleton');
+  for (const r of res.data) {
+    const li = document.createElement('li');
+    const when = document.createElement('span');
+    when.className = 'gc-when';
+    when.textContent = dayFmt(parseDay(r.date));
+    const what = document.createElement('span');
+    what.textContent = r.what;
+    li.append(when, what);
+    el.appendChild(li);
+  }
+}
+
+function drawSocial() {
+  const el = document.getElementById('social-chart');
+  const res = dash.data('social');
+  if (failed(res)) { setFail(el); return; }
+  if (res.status !== 'ok') return;
+  const rows = res.data.map((r) => ({ week: String(r.week).slice(0, 10), views: Number(r.instagram_views) || 0, days: Number(r.days_counted) || 7 }));
+  el.replaceChildren();
+  el.classList.remove('dash-skeleton');
+  if (!rows.length) return;
+  const w = Math.max(280, el.clientWidth || 600);
+  const h = 180;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${w} ${h}`).attr('role', 'img').attr('aria-label', 'Instagram views by week');
+  const y = d3.scaleLinear([0, d3.max(rows, (r) => r.views) * 1.05], [h - 26, 16]).nice();
+  const ticks = y.ticks(3);
+  const kfmt = (v) => (v >= 1000 ? Math.round(v / 1000) + 'K' : String(v));
+  const left = Math.ceil(measure(svg, ticks.map(kfmt))) + 10;
+  const x = d3.scaleBand(rows.map((r) => r.week), [left, w - 8]).padding(0.3);
+  svg.append('g').selectAll('line').data(ticks).join('line')
+    .attr('x1', left).attr('x2', w - 8).attr('y1', (d) => y(d)).attr('y2', (d) => y(d))
+    .style('stroke', 'var(--gc-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text')
+    .attr('x', left - 8).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end')
+    .attr('font-size', 11).style('fill', 'var(--gc-muted)').text(kfmt);
+  svg.append('g').selectAll('rect').data(rows).join('rect')
+    .attr('x', (d) => x(d.week)).attr('width', x.bandwidth())
+    .attr('y', (d) => y(d.views)).attr('height', (d) => y(0) - y(d.views))
+    .style('fill', 'var(--gc-social)').attr('fill-opacity', (d) => (d.days < 7 ? 0.4 : 1));
+  svg.append('g').selectAll('text.v').data(rows).join('text')
+    .attr('x', (d) => x(d.week) + x.bandwidth() / 2).attr('y', (d) => y(d.views) - 4).attr('text-anchor', 'middle')
+    .attr('font-size', 11).attr('font-weight', 700).style('fill', 'var(--gc-ink)').text((d) => count(d.views));
+  svg.append('g').selectAll('text.l').data(rows).join('text')
+    .attr('x', (d) => x(d.week) + x.bandwidth() / 2).attr('y', h - 8).attr('text-anchor', 'middle')
+    .attr('font-size', 11).style('fill', 'var(--gc-muted)').text((d) => dayFmt(parseDay(d.week)));
+}
+
+function drawProjects() {
+  const el = document.getElementById('project-list');
+  const res = dash.data('projects');
+  if (failed(res)) { setFail(el); return; }
+  if (res.status !== 'ok') return;
+  el.replaceChildren();
+  el.classList.remove('dash-skeleton');
+  for (const r of res.data) {
+    const card = document.createElement('a');
+    card.className = 'gc-card gc-proj';
+    card.href = r.url;
+    card.target = '_blank';
+    card.rel = 'noopener';
+    const part = document.createElement('div');
+    part.className = 'gc-label';
+    part.textContent = r.part;
+    const doc = document.createElement('div');
+    doc.className = 'gc-proj-doc';
+    doc.textContent = r.doc;
+    const about = document.createElement('div');
+    about.className = 'gc-proj-about';
+    about.textContent = r.about;
+    const foot = document.createElement('div');
+    foot.className = 'gc-proj-foot';
+    const upd = document.createElement('span');
+    upd.className = 'gc-proj-upd';
+    upd.textContent = r.updated ? 'Updated ' + dayFmt(parseDay(r.updated)) : '';
+    const open = document.createElement('span');
+    open.className = 'gc-open';
+    open.textContent = 'Open';
+    foot.append(upd, open);
+    card.append(part, doc, about, foot);
+    el.appendChild(card);
+  }
+}
+
+dash.onData(() => {
+  ['period_totals', 'latest_week', 'conversion_latest', 'corporate_progress', 'clubs'].forEach(fillMarks);
+  drawWeekly();
+  drawMix();
+  drawTops();
+  drawConversion();
+  drawCorporate();
+  drawDates();
+  drawSocial();
+  drawProjects();
+});
+
+
+fetch('data/meta.json',{cache:'no-cache'}).then(r=>r.json()).then(m=>{document.getElementById('gc-updated').textContent=d3.utcFormat('%b %-d, %Y')(parseDay(m.updated));document.getElementById('gc-through').textContent=dayFmt(parseDay(m.through));}).catch(()=>{});
+dash.start();
+
+</script>
+</body>
+</html>
